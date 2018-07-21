@@ -9,7 +9,7 @@ In this project I used pyest and Appium to create automated tests for the Todois
 
 There's also few essentials needed to run the automation. 
 
-1. The Todoist apk file - This file needs to be placed in the apps directory in the source folder
+1. The Todoist apk file - This file needs to be placed in the apps directory in the src folder
 2. The environment(.env) file - This file needs to be placed in the root of the project and should look something like this
 
 ```bash
