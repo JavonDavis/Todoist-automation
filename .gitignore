@@ -160,3 +160,4 @@ venv.bak/
 .pytest_cache
 
 *.apk
+.DS_STORE
