@@ -13,7 +13,7 @@ There's also few essentials needed to run the automation.
 2. The environment(.env) file - This file needs to be placed in the root of the project and should look something like this
 
 ```bash
-TOKEN=<Your token>
+TOKEN=<Your Todoist personal access token>
 email=<The email that will be used to sign in>
 password=<password for that email>
 ```
