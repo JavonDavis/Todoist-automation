@@ -13,6 +13,7 @@ task_message = 'Complete 3 test cases for Todoist app'
 def test_create_project(landing_page: LandingPage):
     """
     Test that a newly created project appears in the app
+    :param landing_page: The Landing Page object
     """
     project = Project()
     project.create_project(project_name)
@@ -36,6 +37,10 @@ def test_create_project(landing_page: LandingPage):
 
 @login_if_necessary
 def test_create_task(landing_page: LandingPage):
+    """
+    Test that creating a task is applied to the API
+    :param landing_page: The Landing Page object
+    """
     project = Project()
     project.create_project(project_name)
     project.sync()
@@ -62,6 +67,10 @@ def test_create_task(landing_page: LandingPage):
 
 @login_if_necessary
 def test_complete_task(landing_page: LandingPage):
+    """
+    Test that compelting and reopening a tasks applies the necessary updates
+    :param landing_page: The Landing Page object
+    """
     project = Project()
     project.create_project(project_name)
     project.sync()

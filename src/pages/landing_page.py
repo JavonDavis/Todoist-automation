@@ -71,6 +71,11 @@ class LandingPage(BasePage):
         self.wait_then_click(*locators['inbox button'])
 
     def has_task_with_message(self, task_message):
+        """
+        Checks if the landing page has a visible task with the specified message
+        :param task_message: The message to look for
+        :return: True if present, false otherwise
+        """
         by, locator = locators['task message view']
         locator = locator.format(task_message)
         return self.explicitly_wait_for_presence(by, locator)

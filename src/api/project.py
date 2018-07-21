@@ -23,6 +23,9 @@ class Project:
         self.project_id = project.data['id']
 
     def remove_project(self):
+        """
+        Removes the current project
+        """
         if self.project_id is None:
             print('No project Created or project has been deleted')
             return
@@ -31,6 +34,11 @@ class Project:
         self.api.commit()
 
     def contains_task_with_message(self, message):
+        """
+        Checks if the current project has a task the given message
+        :param message: The message to look for
+        :return: True if it does, false otherwise
+        """
         print(self.api.items.all())
         print('filtered')
         print(self.project_id)
@@ -40,8 +48,10 @@ class Project:
                                self.api.items.all()))) > 0
 
     def reopen_task_with_message(self, message):
-        print(self.api.items.all())
-        print(self.project_id)
+        """
+        Reopens the task with the given message
+        :param message: The message to look for, assumes it exists
+        """
         item_id = list(filter(lambda task: task['content'] == message and task['project_id'] == self.project_id,
                               self.api.items.all()))[0]['id']
 
@@ -50,5 +60,8 @@ class Project:
         self.api.commit()
 
     def sync(self):
+        """
+        Syncs the API
+        """
         self.api.sync()
         time.sleep(API_WAIT_TIME)
